@@ -10,7 +10,7 @@ $(document).ready(function(){
     lon: -112.097796,
     begin: new Date("2017/05/22"),
     success: function(data){
-      console.log('incoming data: ', data);
+      console.log('incoming data:  ', data);
     }
   });
 });
