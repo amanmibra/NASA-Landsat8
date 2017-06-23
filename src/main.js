@@ -6,7 +6,7 @@ $(document).ready(function() {
   $('.preset-menu').change(function() {
     $('#success-mess').html('');
     $('#error-mess').html("");
-    
+
     var selectedPresetOption = $('.preset-menu').find(':selected').text();
     if (selectedPresetOption == "Grand Canyon") {
       $('#long').val('-112.097796');
@@ -50,10 +50,10 @@ $(document).ready(function() {
         console.log('incoming data: ', data);
 
         if ("error" in data) {
-          $('#error-mess').html("Error: " + data.error.toString());
+          $('#error-mess').html("Error - " + data.error.toString());
           return;
         } else if (data.count < 2) {
-          $('#error-mess').html("Error: Landsat8 has not recieved enough images to make predictions.");
+          $('#error-mess').html("Error - Landsat8 has not recieved enough images to make predictions.");
           return;
         } else {
           $('#error-mess').html('');
