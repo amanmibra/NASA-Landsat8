@@ -23,6 +23,6 @@
       Ex: "open ~index.html"
 
 ## Project Instructions and More Information: 
-  - Input location through coordinates or select one of the preset menu, then, press the submit button.
+  - Input location through coordinates or select one of the locations from the preset menu, then, press the submit button.
   - Text will pop up with the either the predicted date for the next satellite image or an error for the input. The former would be in blue text, whereas, the latter would be in red
     * The predicted date is decided by finding the average wait time between each image and adding that to the date of the most recent image.
