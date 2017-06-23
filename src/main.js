@@ -3,28 +3,31 @@ $(document).ready(function() {
   var url = "https://api.nasa.gov/planetary/earth/assets?"
   var begin = "2013-02-11"; //Setting the begin date as the Landsat8 launch date
 
-  $('#submit').click(function() {
+  $('.preset-menu').change(function() {
     var selectedPresetOption = $('.preset-menu').find(':selected').text();
-
     if (selectedPresetOption == "Grand Canyon") {
       $('#long').val('-112.097796');
       $('#lat').val('36.098592');
-    }
-    else if(selectedPresetOption == "Niagara Falls") {
+    } else if (selectedPresetOption == "Niagara Falls") {
       $('#long').val('-79.075891');
       $('#lat').val('43.078154');
-    }
-    else if(selectedPresetOption == "Four Corners Monument") {
+    } else if (selectedPresetOption == "Four Corners Monument") {
       $('#long').val('-109.045183');
       $('#lat').val('36.998979');
-    }
-    else if(selectedPresetOption == "Medsender HQ") {
+    } else if (selectedPresetOption == "Medsender HQ") {
       $('#long').val('-74.001472');
       $('#lat').val('40.720583');
-    } else if(selectedPresetOption == "Masjid Al-Haram"){
+    } else if (selectedPresetOption == "Masjid Al-Haram") {
       $('#long').val('39.8579');
       $('#lat').val('21.3891');
+    } else if (selectedPresetOption == "") {
+      $('#long').val('');
+      $('#lat').val('');
     }
+  });
+
+  $('#submit').click(function() {
+    $('#success-mess').html('');
 
     var long = $('#long').val();
     var lat = $('#lat').val();
@@ -32,8 +35,7 @@ $(document).ready(function() {
   })
 
   function flyby(long, lat) {
-    var urlAddons =
-    "lon=" + long + "&lat=" + lat + "&begin=" + begin + "&api_key=" + myKey;
+    var urlAddons = "lon=" + long + "&lat=" + lat + "&begin=" + begin + "&api_key=" + myKey;
     var newURL = url + urlAddons;
     console.log(newURL);
 
