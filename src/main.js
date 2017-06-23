@@ -68,17 +68,17 @@ $(document).ready(function() {
     });
   }
 
-  function getAvgTimeDelta(results) {
-    var sum = 0;
-    for (var i = 0; i < results.length - 1; i++) {
-      var currentDateElement = new Date(results[i].date);
-      var nextDateElement = new Date(results[i + 1].date);
-      var timeDiff = nextDateElement - currentDateElement;
-      sum += timeDiff;
-
-    }
-    return sum / (results.length * 1000);
-    //dividing by 1000 changes time units from milliseconds to seconds
-  }
-
 });
+
+function getAvgTimeDelta(results) {
+  var sum = 0;
+  for (var i = 0; i < results.length - 1; i++) {
+    var currentDateElement = new Date(results[i].date);
+    var nextDateElement = new Date(results[i + 1].date);
+    var timeDiff = nextDateElement - currentDateElement;
+    sum += timeDiff;
+
+  }
+  return sum / ((results.length-1) * 1000);
+  //dividing by 1000 changes time units from milliseconds to seconds
+}
