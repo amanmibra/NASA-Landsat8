@@ -11,15 +11,28 @@
 
   <h1>NASA Satellite Image Prediction</h1>
   <div class = "user-input">
-    Choose Location to Search (or choose one of the Preset locations): <br>
+    <p> <big> Type Coordinates to Search: </big> </p> <br>
     Longitude: <br> <input type = "text" id = "long"> <br>
     Latitude: <br> <input type = "text" id = "lat"> <br>
 
     <h3 style="color: red" id = "error-mess"> </h3>
     <h4 style="color: blue" id = "success-mess"> </h4>
-    <br> <br>
+    <br>
 
-    
+    <p> <big> OR choose one of the Preset locations: </big>  </p> <br>
+
+
+    Present Menu: <br>
+    <select class = "preset-menu">
+      <<option value=""></option>>
+      <<option value="gc">Grand Canyon</option>>
+      <<option value="nf">Niagara Falls</option>>
+      <<option value="fcm">Four Corners Monument</option>>
+      <<option value="mhq">Medsender HQ</option>>
+      <<<option value="mah">Masjid Al-Haram</option>
+    </select>
+
+    <br> <br>
     <input type = "submit" id = "submit">
   </div>
 

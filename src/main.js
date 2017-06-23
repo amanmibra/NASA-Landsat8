@@ -4,6 +4,29 @@ $(document).ready(function() {
   var begin = "2013-02-11"; //Setting the begin date as the Landsat8 launch date
 
   $('#submit').click(function() {
+    var selectedPresetOption = $('.preset-menu').find(':selected').text();
+
+    if (selectedPresetOption == "Grand Canyon") {
+      $('#long').val('-112.097796');
+      $('#lat').val('36.098592');
+    }
+    else if(selectedPresetOption == "Niagara Falls") {
+      $('#long').val('-79.075891');
+      $('#lat').val('43.078154');
+    }
+    else if(selectedPresetOption == "Four Corners Monument") {
+      $('#long').val('-109.045183');
+      $('#lat').val('36.998979');
+    }
+    else if(selectedPresetOption == "Medsender HQ") {
+      $('#long').val('-74.001472');
+      $('#lat').val('40.720583');
+    } else if(selectedPresetOption == "Masjid Al-Haram"){
+      $('#long').val('39.8579');
+      $('#lat').val('21.3891');
+    }
+
+
     var long = $('#long').val();
     var lat = $('#lat').val();
     flyby(long, lat);
