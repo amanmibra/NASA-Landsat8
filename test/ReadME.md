@@ -6,3 +6,14 @@
 
 ### What is being tested?
   The function getAvgTimeDelta() from /src/main.js is the only function being tested, and it's ability to return an integer and it's calculating abilites are tested. Check mainTest.js for more details.
+
+
+## Results of Unit Test
+
+### Main
+
+    getAvgTimeDelta
+    
+        - [✓] should return a number
+        
+        - [✓] should return correct number of seconds for a single day
