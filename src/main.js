@@ -4,6 +4,9 @@ $(document).ready(function() {
   var begin = "2013-02-11"; //Setting the begin date as the Landsat8 launch date
 
   $('.preset-menu').change(function() {
+    $('#success-mess').html('');
+    $('#error-mess').html("");
+    
     var selectedPresetOption = $('.preset-menu').find(':selected').text();
     if (selectedPresetOption == "Grand Canyon") {
       $('#long').val('-112.097796');
@@ -28,6 +31,7 @@ $(document).ready(function() {
 
   $('#submit').click(function() {
     $('#success-mess').html('');
+    $('#error-mess').html("");
 
     var long = $('#long').val();
     var lat = $('#lat').val();
