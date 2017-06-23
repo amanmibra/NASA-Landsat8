@@ -26,29 +26,27 @@ $(document).ready(function() {
       $('#lat').val('21.3891');
     }
 
-
     var long = $('#long').val();
     var lat = $('#lat').val();
     flyby(long, lat);
   })
 
   function flyby(long, lat) {
-    var urlAddons = "lon=" + long + "&lat=" + lat + "&begin=" + begin + "&api_key=" + myKey;
+    var urlAddons =
+    "lon=" + long + "&lat=" + lat + "&begin=" + begin + "&api_key=" + myKey;
     var newURL = url + urlAddons;
     console.log(newURL);
 
     $.ajax({
       url: newURL,
       success: function(data) {
+        //refer to console to the data struct. being analyzed
         console.log('incoming data: ', data);
 
         if ("error" in data) {
-          //if there is an error in the input the NASA API returns an error message
-          //if statement checks if the error statement exists in the array returned by the NASA API
           $('#error-mess').html("Error: " + data.error.toString());
           return;
         } else if (data.count < 2) {
-          //this would only occur if there was only one image stored under certain location
           $('#error-mess').html("Error: Landsat8 has not recieved enough images to make predictions.");
           return;
         } else {
@@ -60,10 +58,6 @@ $(document).ready(function() {
 
           var newDate = new Date(lastDate.toString());
           newDate.setSeconds(lastDate.getSeconds() + avgTimeDelta);
-
-          // console.log('lastDate', lastDate.toString());
-          // console.log('avgTimeDelta', avgTimeDelta);
-          // console.log('new Date', newDate.toString())
 
           $('#success-mess').html('According to this data, the predicted date for the next satelitte image at this location is: <br>' + newDate.toString());
         }
@@ -82,6 +76,7 @@ $(document).ready(function() {
 
     }
     return sum / (results.length * 1000);
+    //dividing by 1000 changes time units from milliseconds to seconds
   }
 
 });
