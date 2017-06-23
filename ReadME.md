@@ -1,18 +1,18 @@
 ## How to run project:
-  1. File Explorer:
+  ### 1. File Explorer:
   
     - Open src folder
     
     - Open index.html
     
-  2. Windows Command Line
+  ### 2. Windows Command Line
   
     - Access src directory using "cd" command
       
     - Open index.html with "start" command
       
       Ex: "start index.html"
-  3. UNIX Command Line
+  ### 3. UNIX Command Line
   
     - Access src directory using "cd" command
       
